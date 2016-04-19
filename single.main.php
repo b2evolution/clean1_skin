@@ -135,7 +135,7 @@ while( $Item = & mainlist_get_item() )
 				) );
 			// ----------------------------- END OF "Item - Single" CONTAINER -----------------------------
 
-			} else { // We are running at least b2evo 6.7
+			} else { // We are NOT running at least b2evo 6.7
 			
 			// ---------------------- POST CONTENT INCLUDED HERE ----------------------
 			skin_include( '_item_content.inc.php', array(
