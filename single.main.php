@@ -13,6 +13,8 @@
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
+global $Item, $Skin, $app_version;
+
 if( version_compare( $app_version, '4.0.0-dev' ) < 0 )
 { // Older 2.x skins work on newer 2.x b2evo versions, but newer 2.x skins may not work on older 2.x b2evo versions.
 	die( 'This skin is designed for b2evolution 4.0.0 and above. Please <a href="http://b2evolution.net/downloads/index.html">upgrade your b2evolution</a>.' );
@@ -30,10 +32,8 @@ skin_include( '_html_header.inc.php', array(
 // Note: You can customize the default HTML header by copying the generic
 // /skins/_html_header.inc.php file into the current skin folder.
 // -------------------------------- END OF HEADER --------------------------------
-?>
 
 
-<?php
 // ------------------------- BODY HEADER INCLUDED HERE --------------------------
 skin_include( '_body_header.inc.php' );
 // Note: You can customize the default BODY header by copying the generic
@@ -107,16 +107,8 @@ while( $Item = & mainlist_get_item() )
 		?>
 		</div>
 		<?php
-			// ---------------------- POST CONTENT INCLUDED HERE ----------------------
-			skin_include( '_item_content.inc.php', array(
-					'image_size' => 'fit-640x480',
-				) );
-			// Note: You can customize the default item content by copying the generic
-			// /skins/_item_content.inc.php file into the current skin folder.
-			// -------------------------- END OF POST CONTENT -------------------------
-		?>
-
-		<?php
+			// We are running at least b2evo 6.7, so we can include this file:
+			if( evo_version_compare( $app_version, '6.7' ) >= 0 ) {
 			// ------------------------- "Item - Single" CONTAINER EMBEDDED HERE --------------------------
 			// WARNING: EXPERIMENTAL -- NOT RECOMMENDED FOR PRODUCTION -- MAY CHANGE DRAMATICALLY BEFORE RELEASE.
 			// Display container contents:
@@ -141,9 +133,18 @@ while( $Item = & mainlist_get_item() )
 					'notes_start' => '<div class="notes">',
 					'notes_end' => '</div>',
 				) );
-			// ----------------------------- END OF "Sidebar" CONTAINER -----------------------------
-		?>
+			// ----------------------------- END OF "Item - Single" CONTAINER -----------------------------
 
+			} else { // We are running at least b2evo 6.7
+			
+			// ---------------------- POST CONTENT INCLUDED HERE ----------------------
+			skin_include( '_item_content.inc.php', array(
+					'image_size' => 'fit-640x480',
+				) );
+			// Note: You can customize the default item content by copying the generic
+			// /skins/_item_content.inc.php file into the current skin folder.
+			// -------------------------- END OF POST CONTENT -------------------------
+			?>
 		<p class="postmetadata alt">
 			<?php
 				$Item->author( array(
@@ -191,7 +192,8 @@ while( $Item = & mainlist_get_item() )
 						'text'		=> '#icon#',
 					) );
 			?>
-		</p>
+			</p>
+			<?php }	?>
 
 	</div>
 

@@ -187,17 +187,23 @@ div.evo_container__menu a.selected {
 }
 .postmetadata,
 .comment_notification,
-.feedback_feed_msg {
+.feedback_feed_msg,
+.widget_core_item_small_print,
+.widget_core_item_tags {
 	color: #999;
 	font-size: 76%;
 	line-height: 1.7;
 }
-.postmetadata img {
+.postmetadata img,
+.widget_core_item_small_print img,
+.widget_core_item_tags img {
 	border-radius: 24px;
 }
 .postmetadata a,
 .comment_notification a,
-.feedback_feed_msg a {
+.feedback_feed_msg a,
+.widget_core_item_small_print a,
+.widget_core_item_tags a {
 	color: #666;
 }
 
