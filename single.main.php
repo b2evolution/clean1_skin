@@ -107,10 +107,19 @@ while( $Item = & mainlist_get_item() )
 		?>
 		</div>
 		<?php
-			// We are running at least b2evo 6.7, so we can include this file:
-			if( evo_version_compare( $app_version, '6.7' ) >= 0 ) {
+			if( version_compare( $app_version, '6.7' ) < 0 ) 
+			{ // We are NOT running at least b2evo 6.7
+			
+				// ---------------------- POST CONTENT INCLUDED HERE ----------------------
+				skin_include( '_item_content.inc.php', array(
+						'image_size' => 'fit-640x480',
+					) );
+				// Note: You can customize the default item content by copying the generic
+				// /skins/_item_content.inc.php file into the current skin folder.
+				// -------------------------- END OF POST CONTENT -------------------------
+			}
+
 			// ------------------------- "Item - Single" CONTAINER EMBEDDED HERE --------------------------
-			// WARNING: EXPERIMENTAL -- NOT RECOMMENDED FOR PRODUCTION -- MAY CHANGE DRAMATICALLY BEFORE RELEASE.
 			// Display container contents:
 			skin_container( NT_('Item Single'), array(
 					// The following (optional) params will be used as defaults for widgets included in this container:
@@ -135,66 +144,60 @@ while( $Item = & mainlist_get_item() )
 				) );
 			// ----------------------------- END OF "Item - Single" CONTAINER -----------------------------
 
-			} else { // We are NOT running at least b2evo 6.7
-			
-			// ---------------------- POST CONTENT INCLUDED HERE ----------------------
-			skin_include( '_item_content.inc.php', array(
-					'image_size' => 'fit-640x480',
-				) );
-			// Note: You can customize the default item content by copying the generic
-			// /skins/_item_content.inc.php file into the current skin folder.
-			// -------------------------- END OF POST CONTENT -------------------------
-			?>
-		<p class="postmetadata alt">
-			<?php
-				$Item->author( array(
-						'link_text'    => 'only_avatar',
-						'link_rel'     => 'nofollow',
-						'thumb_size'   => 'crop-top-48x48',
-						'thumb_class'  => 'leftmargin',
-					) );
+			if( version_compare( $app_version, '6.7' ) < 0 ) 
+			{ // We are NOT running at least b2evo 6.7
+				?>
+				<p class="postmetadata alt">
+					<?php
+						$Item->author( array(
+								'link_text'    => 'only_avatar',
+								'link_rel'     => 'nofollow',
+								'thumb_size'   => 'crop-top-48x48',
+								'thumb_class'  => 'leftmargin',
+							) );
 
-				if( $Skin->get_setting( 'display_post_date') )
-				{	// We want to display the post date:
-					$Item->issue_time( array(
-							'before'      => /* TRANS: date */ T_('This entry was posted on '),
-							'time_format' => 'j. F Y',
+						if( $Skin->get_setting( 'display_post_date') )
+						{	// We want to display the post date:
+							$Item->issue_time( array(
+									'before'      => /* TRANS: date */ T_('This entry was posted on '),
+									'time_format' => 'j. F Y',
+								) );
+							$Item->author( array(
+									'before'      => T_('by ').' ',
+								) );
+						}
+						else
+						{
+							$Item->author( array(
+									'before'      => T_('This entry was posted by '),
+								) );
+						}
+
+						$Item->categories( array(
+							'before'          => ' '.T_('and is filed under').' ',
+							'after'           => '.',
+							'include_main'    => true,
+							'include_other'   => true,
+							'include_external'=> true,
+							'link_categories' => true,
 						) );
-					$Item->author( array(
-							'before'      => T_('by ').' ',
-						) );
-				}
-				else
-				{
-					$Item->author( array(
-							'before'      => T_('This entry was posted by '),
-						) );
-				}
 
-				$Item->categories( array(
-					'before'          => ' '.T_('and is filed under').' ',
-					'after'           => '.',
-					'include_main'    => true,
-					'include_other'   => true,
-					'include_external'=> true,
-					'link_categories' => true,
-				) );
+						// List all tags attached to this post:
+						$Item->tags( array(
+								'before' =>         ' '.T_('Tags').': ',
+								'after' =>          ' ',
+								'separator' =>      ', ',
+							) );
 
-				// List all tags attached to this post:
-				$Item->tags( array(
-						'before' =>         ' '.T_('Tags').': ',
-						'after' =>          ' ',
-						'separator' =>      ', ',
-					) );
-
-				$Item->edit_link( array( // Link to backoffice for editing
-						'before'    => ' ',
-						'text'		=> '#icon#',
-					) );
-			?>
-			</p>
-			<?php }	?>
-
+						$Item->edit_link( array( // Link to backoffice for editing
+								'before'    => ' ',
+								'text'		=> '#icon#',
+							) );
+					?>
+					</p>
+				<?php
+			 }
+		?>
 	</div>
 
 <?php
