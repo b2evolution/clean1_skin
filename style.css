@@ -197,7 +197,7 @@ div.evo_container__menu a.selected {
 .postmetadata img,
 .widget_core_item_small_print img,
 .widget_core_item_tags img {
-	border-radius: 24px;
+	border-radius: 50%;
 }
 .postmetadata a,
 .comment_notification a,
