@@ -310,15 +310,10 @@ form.search .search_submit {
 	text-align: center;
 	text-align: center;
 	background: #f9f9f9;
-	background: -moz-linear-gradient(top, #f9f9f9 0%, #dbdbdb 100%);
-	background: -ms-linear-gradient(top, #f9f9f9 0%, #dbdbdb 100%);
-	background: -o-linear-gradient(top, #f9f9f9 0%, #dbdbdb 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #dbdbdb));
 	background: -webkit-linear-gradient(top, #f9f9f9 0%, #dbdbdb 100%);
 	background: linear-gradient(top, #f9f9f9 0%, #dbdbdb 100%);
 	text-shadow: 0 1px 0 white;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
 	box-shadow: none;
 	border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -328,9 +323,6 @@ form.search .search_submit {
 }
 form.search .search_submit:hover {
 	background: #fafafa;
-	background: -moz-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
-	background: -ms-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
-	background: -o-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fafafa), color-stop(100%, #eaeaea));
 	background: -webkit-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
 	background: linear-gradient(top, #fafafa 0%, #eaeaea 100%);
@@ -344,17 +336,12 @@ form.search div.extended_search_form input.search_field {
 	font-size: 1.2em;
 	white-space: nowrap;
 	overflow: hidden;
-	-o-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 	padding: 0 10px;
 	float: left;
 	border: 1px solid #D8D8D8;
 	background-color: #FFF;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
 	border-radius: 2px;
-	-webkit-box-shadow: inset -1px 1px 4px #eee;
-	-moz-box-shadow: inset -1px 1px 4px #eee;
 	box-shadow: inset -1px 1px 4px #eee;
 	box-sizing: content-box
 }
@@ -522,15 +509,9 @@ a.roundbutton:hover span.fa {
 	margin: 2px;
 	position: relative;
 	-webkit-transition: border-radius 250ms ease-out, background-color 250ms ease-out;
-	-moz-transition: border-radius 250ms ease-out, background-color 250ms ease-out;
-	-o-transition: border-radius 250ms ease-out, background-color 250ms ease-out;
 	transition: border-radius 250ms ease-out, background-color 250ms ease-out;
 }
 .ufld_icon_links a:hover {
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
 	border-radius: 4px;
 	color: #FFF;
 	background: #23527c;
