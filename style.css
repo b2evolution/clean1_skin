@@ -70,7 +70,6 @@ div.skin_wrapper_loggedin {
 /* Top menu */
 div.evo_container__menu {
 	margin: 5px 0 8px 8px;
-	background: #DDD;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -89,24 +88,17 @@ div.evo_container__menu li {
 	position: relative;
 }
 div.evo_container__menu a {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
 	font-size: 0.524em;
 	line-height: 3.182em;
 	display: block;
 	padding: 0 8px;
+	margin: 0 2px;
 	background: #DDD;
 	text-transform: uppercase;
-}
-div.evo_container__menu li:first-child a {
-	-moz-border-radius-topleft: 3px; -moz-border-radius-bottomleft: 3px;
-	-webkit-border-radius: 3px 0 0 3px;
-	-khtml-border-radius-topleft: 3px; -khtml-border-radius-bottomleft: 3px;
-	border-radius: 3px 0 0 3px;
-}
-div.evo_container__menu li:last-child a {
-	-moz-border-radius-topright: 3px; -moz-border-radius-bottomright: 3px;
-	-webkit-border-radius: 3px 0 0 3px;
-	-khtml-border-radius-topright: 3px; -khtml-border-radius-bottomright: 3px;
-	border-radius: 0 3px 3px 0;
 }
 div.evo_container__menu a.selected {
 	text-decoration: underline;
@@ -403,6 +395,12 @@ div.prevnext_post span.prevnext_post_separator {
 	line-height: 16px;
 }
 
+.search_result_score {
+	line-height: 34px;
+}
+.search_content_wrap {
+	margin-left: 57px;
+}
 .search_result h2 {
 	margin: 0;
 	font-size: 24px;
