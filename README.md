@@ -1,6 +1,6 @@
 ## Clean 1 Skin for b2evolution.
 
-<img src="skinshot-big.png"/>
+<img src="skinshot.png"/>
 
 ### Update Log
 
