@@ -100,8 +100,8 @@ div.evo_container__menu a {
 	background: #DDD;
 	text-transform: uppercase;
 }
-div.evo_container__menu a.selected {
-	text-decoration: underline;
+div.evo_container__menu li.selected a {
+	text-decoration: none;
 }
 
 /* Content */
