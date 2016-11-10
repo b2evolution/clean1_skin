@@ -206,24 +206,31 @@ div.evo_container__menu li.selected a {
 .navigation.top_nav {
 	margin-top: 26px;
 }
-.navigation strong {
+.navigation ul {
+	padding: 0;
 	display: inline-block;
+}
+.navigation ul li {
+	list-style-type: none;
+    float: left;
+}
+.navigation ul li a, .navigation ul li.active strong {
+	position: relative;
+	background-color: #ddd;
+	border-radius: 3px;
+	margin: 2px;
+	display: block;
+    width: 33px;
+    height: 34px;
+}
+.navigation ul li.active a, .navigation ul li.active strong {
 	background-color: #000;
 	color: #fff;
 	border-radius: 3px;
-	width: 33px;
-	height: 34px;
-	margin: 2px 0;
 }
-.navigation a {
-	display: inline-block;
-	background-color: #ddd;
-	border-radius: 3px;
-	width: 33px;
-	height: 34px;
-	margin: 2px 0;
+.navigation ul li a i {
+	line-height: 34px;
 }
-
 div.image_block img {
 	margin: 1ex 0;
 	border-radius: 5px;

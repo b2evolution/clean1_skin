@@ -102,14 +102,18 @@ if( $Item = & get_featured_Item() )
 ?>
 
 <?php
-	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-	mainlist_page_links( array(
-			'block_start' => '<div class="navigation top_nav">',
-			'block_end' => '</div>',
-			'prev_text' => '&laquo;',
-			'next_text' => '&raquo;',
-		) );
-	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
+// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
+mainlist_page_links( array(
+		'block_start' => '<div class="navigation top_nav"><ul>',
+		'block_end' => '</ul></div>',
+		'page_item_before'      => '<li>',
+		'page_item_after'       => '</li>',
+		'page_item_current_before' => '<li class="active">',
+		'page_item_current_after'  => '</li>',
+		'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
+		'next_text'             => '<i class="fa fa-angle-double-right"></i>',
+	) );
+// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 ?>
 
 <?php
@@ -133,10 +137,14 @@ echo '</div>'; // End of posts display
 <?php
 	// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 	mainlist_page_links( array(
-			'block_start' => '<div class="page_separator">&nbsp;</div><div class="navigation">',
-			'block_end' => '</div>',
-			'prev_text' => '&laquo;',
-			'next_text' => '&raquo;',
+			'block_start' => '<div class="navigation top_nav"><ul>',
+			'block_end' => '</ul></div>',
+						'page_item_before'      => '<li>',
+						'page_item_after'       => '</li>',
+						'page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+						'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
+						'next_text'             => '<i class="fa fa-angle-double-right"></i>',
 		) );
 	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 ?>
