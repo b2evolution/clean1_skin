@@ -139,12 +139,12 @@ echo '</div>'; // End of posts display
 	mainlist_page_links( array(
 			'block_start' => '<div class="navigation top_nav"><ul>',
 			'block_end' => '</ul></div>',
-						'page_item_before'      => '<li>',
-						'page_item_after'       => '</li>',
-						'page_item_current_before' => '<li class="active">',
-						'page_item_current_after'  => '</li>',
-						'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
-						'next_text'             => '<i class="fa fa-angle-double-right"></i>',
+			'page_item_before'      => '<li>',
+			'page_item_after'       => '</li>',
+			'page_item_current_before' => '<li class="active">',
+			'page_item_current_after'  => '</li>',
+			'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
+			'next_text'             => '<i class="fa fa-angle-double-right"></i>',
 		) );
 	// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 ?>
