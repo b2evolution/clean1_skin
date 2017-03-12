@@ -88,8 +88,6 @@ div.evo_container__menu li {
 	position: relative;
 }
 div.evo_container__menu a {
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 	-khtml-border-radius: 3px;
 	border-radius: 3px;
 	font-size: 0.524em;
