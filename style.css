@@ -2,7 +2,7 @@
 	width: device-width;
 }
 
-body {
+#skin_wrapper {
 	background: #fdfdfd;
 	color: #111;
 	font: 20px Georgia, serif;
