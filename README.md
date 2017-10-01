@@ -1,5 +1,7 @@
 ## Clean 1 Skin for b2evolution.
 
+This is a pretty minimalistic "clean" single column skin, designed primarily for the reader's comfort.
+
 <img src="skinshot.png"/>
 
 ### Update Log
