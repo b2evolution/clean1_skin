@@ -12,14 +12,13 @@
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
-?>
-<div id="sidebar" class="sidebar">
-	<ul>
-	<?php
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
 		// Display container contents:
 		skin_container( NT_('Sidebar'), array(
 				// The following (optional) params will be used as defaults for widgets included in this container:
+				'container_display_if_empty' => true, // Display container anyway even if no widget
+				'container_start'     => '<div id="sidebar" class="sidebar"><div class="evo_container $wico_class$"><ul>',
+				'container_end'       => '<ul></div></div>',
 				// This will enclose each widget in a block:
 				'block_start' => '<li class="$wi_class$">',
 				'block_end' => '</li>',
@@ -41,5 +40,3 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 			) );
 		// ----------------------------- END OF "Sidebar" CONTAINER -----------------------------
 	?>
-	</ul>
-</div>

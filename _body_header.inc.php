@@ -23,11 +23,13 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <div id="header">
 
-	<div class="evo_container evo_container__page_top">
 	<?php
 		// Display container and contents:
 		skin_container( NT_('Page Top'), array(
 				// The following params will be used as defaults for widgets included in this container:
+				'container_display_if_empty' => true, // Display container anyway even if no widget
+				'container_start'     => '<div class="evo_container $wico_class$">',
+				'container_end'       => '</div>',
 				'block_start' => '<div class="evo_widget $wi_class$">',
 				'block_end' => '</div>',
 				'block_display_title' => false,
@@ -37,20 +39,18 @@ siteskin_include( '_site_body_header.inc.php' );
 				'item_end' => '</li>',
 			) );
 	?>
-	</div>
 
 	<?php
 	global $hide_widget_container_menu;
 	if( empty( $hide_widget_container_menu ) )
 	{ // Display this widget container only when it is not disabled
-	?>
-	<div class="evo_container evo_container__menu">
-		<ul>
-		<?php
 			// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
 			// Display container and contents:
 			skin_container( NT_('Menu'), array(
 					// The following params will be used as defaults for widgets included in this container:
+					'container_display_if_empty' => false, // Display container anyway even if no widget
+					'container_start'     => '<div class="evo_container $wico_class$"><ul>',
+					'container_end'       => '</ul></div>',
 					'block_start'         => '',
 					'block_end'           => '',
 					'block_display_title' => false,
@@ -62,17 +62,16 @@ siteskin_include( '_site_body_header.inc.php' );
 					'item_title_after'    => '',
 				) );
 			// ----------------------------- END OF "Menu" CONTAINER -----------------------------
-		?>
-		</ul>
-	</div>
-	<?php } ?>
-
-	<div class="clear evo_container evo_container__header">
-	<?php
+	}
+	
+	
 		// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
 		// Display container and contents:
 		skin_container( NT_('Header'), array(
 				// The following params will be used as defaults for widgets included in this container:
+				'container_display_if_empty' => true, // Display container anyway even if no widget
+				'container_start'     => '<div class="clear evo_container $wico_class$">',
+				'container_end'       => '</div>',
 				'block_start'         => '<div class="evo_widget $wi_class$">',
 				'block_end'           => '</div>',
 				'block_title_start'   => '<h1>',
@@ -90,5 +89,4 @@ siteskin_include( '_site_body_header.inc.php' );
 			) );
 		// ----------------------------- END OF "Header" CONTAINER -----------------------------
 	?>
-	</div>
 </div>
