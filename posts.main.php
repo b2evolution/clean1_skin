@@ -59,12 +59,12 @@ skin_widget( array(
 		// CODE for the widget:
 		'widget' => 'coll_search_form',
 		// Optional display params
-		'block_start'         => '<div class="$wi_class$">',
+		'block_start'         => '<div class="evo_widget $wi_class$">',
 		'block_end'           => '</div><div class="clear"></div>',
 		'block_title_start'   => '<h1>',
 		'block_title_end'     => '</h1>',
 		'block_display_title' => false,
-		'block_start'         => '<div class="$wi_class$ menu_top_widget_block">',
+		'block_start'         => '<div class="evo_widget $wi_class$ menu_top_widget_block">',
 		'block_end'           => '</div>',
 		'button'              => T_('Search')
 	) );
