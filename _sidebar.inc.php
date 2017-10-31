@@ -14,7 +14,7 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
 		// Display container contents:
-		skin_container( NT_('Sidebar'), array(
+		widget_container( 'sidebar', array(
 				// The following (optional) params will be used as defaults for widgets included in this container:
 				'container_display_if_empty' => true, // Display container anyway even if no widget
 				'container_start'     => '<div id="sidebar" class="sidebar"><ul class="evo_container $wico_class$">',

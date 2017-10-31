@@ -25,7 +25,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 	<?php
 		// Display container and contents:
-		skin_container( NT_('Page Top'), array(
+		widget_container( 'page_top', array(
 				// The following params will be used as defaults for widgets included in this container:
 				'container_display_if_empty' => false, // If no widget, don't display container at all
 				'container_start'     => '<div class="evo_container $wico_class$">',
@@ -46,7 +46,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	{ // Display this widget container only when it is not disabled
 			// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
 			// Display container and contents:
-			skin_container( NT_('Menu'), array(
+			widget_container( 'menu', array(
 					// The following params will be used as defaults for widgets included in this container:
 					'container_display_if_empty' => false, // If no widget, don't display container at all
 					'container_start'     => '<div class="evo_container $wico_class$"><ul>',
@@ -67,7 +67,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	
 		// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
 		// Display container and contents:
-		skin_container( NT_('Header'), array(
+		widget_container( 'header', array(
 				// The following params will be used as defaults for widgets included in this container:
 				'container_display_if_empty' => true, // Display container anyway even if no widget
 				'container_start'     => '<div class="clear evo_container $wico_class$">',

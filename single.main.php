@@ -121,7 +121,7 @@ while( $Item = & mainlist_get_item() )
 
 			// ------------------------- "Item - Single" CONTAINER EMBEDDED HERE --------------------------
 			// Display container contents:
-			skin_container( NT_('Item Single'), array(
+			widget_container( 'item_single', array(
 					// The following (optional) params will be used as defaults for widgets included in this container:
 					'container_display_if_empty' => false, // If no widget, don't display container at all
 					'container_start' => '<div class="evo_container $wico_class$">',
