@@ -41,7 +41,7 @@ class clean1_Skin extends Skin
 	 */
 	function get_default_type()
 	{
-		return 'normal';
+		return 'rwd';
 	}
 	
 	
