@@ -23,7 +23,7 @@ class clean1_Skin extends Skin
 	 * Skin version
 	 * @var string
 	 */
-	var $version = '7.8.0';
+	var $version = '6.8.0';
 	
 	
 	/**
